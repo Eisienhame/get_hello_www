@@ -10,8 +10,7 @@ class my_sever(BaseHTTPRequestHandler):
         pass
 
     def do_GET(self):
-        self.send_response(200, text_exp)
-
+        self.send_response(200)
 if __name__ == "__main__":
     webServer = HTTPServer((hostname, severport), my_sever)
     print('START')
