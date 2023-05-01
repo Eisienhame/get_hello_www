@@ -12,8 +12,8 @@ class my_sever(BaseHTTPRequestHandler):
         pass
 
     def do_GET(self):
-        print(text_exp)
-        self.send_response(200)
+
+        self.send_response(200, text_exp)
 
 if __name__ == "__main__":
     webServer = HTTPServer((hostname, severport), my_sever)
