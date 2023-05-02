@@ -12,8 +12,10 @@ class my_sever(BaseHTTPRequestHandler):
         pass
 
     def do_GET(self):
-
-        self.send_response(200, text_exp)
+        self.send_response(200)
+        self.send_header("Content_type", "application/json")
+        self.end_headers()
+        self.wfile.write(bytes(text_exp, "utf-8"))
 
 if __name__ == "__main__":
     webServer = HTTPServer((hostname, severport), my_sever)
